@@ -26,7 +26,16 @@ const occupations = [
 ];
 
 const jobsList = document.querySelector("#jobsList");
+const addButton = document.querySelector("#addButton");
+const spanCount = document.querySelector("#spanCount");
+addButton.addEventListener("click", function () {
+  jobs.push(generateRandom());
+  render();
+});
 
+jobsList.addEventListener("click", function (ev) {
+  console.log(ev);
+});
 function generateRandom() {
   const nameIdx = Math.floor(Math.random() * names.length);
   const name = names[nameIdx];
